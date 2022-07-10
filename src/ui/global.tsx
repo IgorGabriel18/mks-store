@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
     * {
@@ -8,11 +8,8 @@ export default createGlobalStyle`
         text-decoration: none;
         list-style: none;
     }
-`;
 
-export const PageContainer = styled.section`
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-    max-height: max-content;
+    button {
+        all: unset;
+    }
 `;

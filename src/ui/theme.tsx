@@ -9,6 +9,10 @@ export const theme = {
             primary: "#2C2C2C",
             secondary: "#F4F4F4",
         },
+        variant: {
+            primary: "#0e0d0d",
+            secondary: "#EEEEEE",
+        },
     },
     typography: {
         weight: {
@@ -18,21 +22,22 @@ export const theme = {
             bold: 700,
         },
         size: {
-            title: "1.125em", // 18px
-            subtitle: "15em", // 16px
-            text: "0.875em", // 14px
-            legend: "0.75em", // 12px
+            title: "1em", // 16px
+            subtitle: "0.875em", // 14px
+            text: "0.6255em", // 10px
         },
-        line_height: "normal",
         family: "Montserrat, Helvetica, sans-serif",
     },
     shape: {
+        screen_break: "62rem", // 992px
         border: {
-            size: "0.125rem", // 2px
             radius: {
                 main: "0.5rem", // 8px
-                circle: "100%",
             },
+        },
+        icon: {
+            small: "1.5rem", // 24px
+            medium: "1.75rem", // 28px
         },
     },
 };
