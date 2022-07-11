@@ -1,24 +1,29 @@
 import { Bag } from "phosphor-react";
 import { ThemeProvider } from "styled-components";
 
-import itemImg from "../../assets/item.png";
 import { theme } from "../../ui/theme";
 import { Container, Item, BuyButton } from "./styles";
+interface IStoreItemCardProps {
+    name: string;
+    description: string;
+    photo: string;
+    price: number;
+}
 
-export function StoreItemCard() {
+export function StoreItemCard(props: IStoreItemCardProps) {
     return (
         <ThemeProvider theme={theme}>
             <Container>
                 <Item>
                     <figure>
-                        <img src={itemImg} alt="Produto" />
+                        <img src={props.photo} alt={props.name} />
 
                         <figcaption>
-                            <h1>Apple Watch Series 4 GPS</h1>
-                            <span>R$399</span>
+                            <h1>{props.name}</h1>
+                            <span>R${props.price}</span>
                         </figcaption>
                     </figure>
-                    <p>Redesigned from scratch and completely revised.</p>
+                    <p>{props.description}</p>
                 </Item>
                 <BuyButton type="button">
                     <Bag className="icon" />

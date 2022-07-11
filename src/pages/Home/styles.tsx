@@ -50,12 +50,13 @@ export const ShoppingCartButton = styled.button`
 `;
 
 export const List = styled.ul`
-    width: 100%;
+    width: min(100%, 75rem);
     height: auto;
+    margin: 0 auto;
     padding: 2rem 3rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     gap: 1rem;
 `;
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.li`
+export const Container = styled.div`
     width: 16rem;
     height: 21rem;
     display: grid;
@@ -26,6 +26,11 @@ export const Item = styled.div`
         grid: repeat(2, auto) / 100%;
         justify-items: center;
         row-gap: 0.5rem;
+
+        img {
+            width: 7rem;
+            height: 8.5rem;
+        }
 
         figcaption {
             width: 100%;
