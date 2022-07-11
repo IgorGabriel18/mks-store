@@ -3,14 +3,14 @@ import { ThemeProvider } from "styled-components";
 
 import { theme } from "../../ui/theme";
 import { Container, Item, BuyButton } from "./styles";
-interface IStoreItemCardProps {
+interface IStoreItemProps {
     name: string;
     description: string;
     photo: string;
     price: number;
 }
 
-export function StoreItemCard(props: IStoreItemCardProps) {
+export function StoreItem(props: IStoreItemProps) {
     return (
         <ThemeProvider theme={theme}>
             <Container>
