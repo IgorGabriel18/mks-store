@@ -4,7 +4,12 @@
         "es2021": true,
         "jest": true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
@@ -24,14 +29,21 @@
             "warn",
             {
                 "newlinesBetween": "always",
-                "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
+                "groups": [
+                    "module",
+                    "/^@shared/",
+                    ["parent", "sibling", "index"]
+                ],
                 "alphabetize": {
                     "order": "asc",
                     "ignoreCase": true
                 }
             }
         ],
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "react/jsx-filename-extension": [
+            1,
+            { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+        ],
         "react/react-in-jsx-scope": "off",
         "react/jsx-key": "off"
     },

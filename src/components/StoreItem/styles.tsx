@@ -1,97 +1,81 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 16rem;
-    height: 21rem;
+    width: 15.75rem;
+    height: 20.5rem;
+    padding: ${({ theme }) => theme.shape.spacing.big} 0 0 0;
     display: grid;
     grid: repeat(2, auto) / 100%;
+    row-gap: ${({ theme }) => theme.shape.spacing.small};
     align-content: space-between;
-    row-gap: 0.5rem;
     border-radius: ${({ theme }) => theme.shape.border.radius.main};
     box-shadow: ${({ theme }) => theme.color_palette.base.secondary} 0 0.5rem 1.5rem;
 `;
 
-export const Item = styled.div`
+export const Box = styled.div`
     width: 100%;
     height: auto;
-    padding: 1rem 0.75rem 0 0.75rem;
+    padding: 0 ${({ theme }) => theme.shape.spacing.big};
     display: grid;
-    grid: repeat(2, auto) / 100%;
-    row-gap: 0.5rem;
+    grid: repeat(3, auto) / 100%;
+    row-gap: ${({ theme }) => theme.shape.spacing.small};
 
-    figure {
+    img {
+        width: 7rem;
+        height: 8.5rem;
+    }
+
+    div {
         width: 100%;
         height: auto;
         display: grid;
-        grid: repeat(2, auto) / 100%;
-        justify-items: center;
-        row-gap: 0.5rem;
+        grid: 100% / repeat(2, auto);
+        justify-content: space-between;
+        column-gap: ${({ theme }) => theme.shape.spacing.small};
 
-        img {
-            width: 7rem;
-            height: 8.5rem;
+        h3 {
+            font: ${({ theme }) => theme.typography.title};
+            color: ${({ theme }) => theme.color_palette.base.secondary};
+            text-align: justify;
         }
 
-        figcaption {
-            width: 100%;
-            height: auto;
-            display: grid;
-            grid: 100% / repeat(2, auto);
-            align-items: center;
-            column-gap: 0.75rem;
-
-            h1 {
-                font-weight: ${({ theme }) => theme.typography.weight.regular};
-                font-size: ${({ theme }) => theme.typography.size.title};
-                font-family: ${({ theme }) => theme.typography.family};
-                color: ${({ theme }) => theme.color_palette.text.primary};
-            }
-
-            span {
-                width: max-content;
-                height: max-content;
-                padding: 0.5rem;
-                background-color: ${({ theme }) => theme.color_palette.base.secondary};
-                border-radius: ${({ theme }) => theme.shape.border.radius.main};
-                font-weight: ${({ theme }) => theme.typography.weight.bold};
-                font-size: ${({ theme }) => theme.typography.size.subtitle};
-                font-family: ${({ theme }) => theme.typography.family};
-                color: ${({ theme }) => theme.color_palette.text.secondary};
-            }
+        span {
+            width: max-content;
+            height: max-content;
+            padding: 0.25rem 1rem;
+            background-color: ${({ theme }) => theme.color_palette.base.secondary};
+            border-radius: ${({ theme }) => theme.shape.border.radius.main};
+            font: ${({ theme }) => theme.typography.subtitle};
+            color: ${({ theme }) => theme.color_palette.base.primary};
         }
     }
 
     p {
-        width: 100%;
-        height: auto;
-        font-weight: ${({ theme }) => theme.typography.weight.light};
-        font-size: ${({ theme }) => theme.typography.size.text};
-        font-family: ${({ theme }) => theme.typography.family};
-        color: ${({ theme }) => theme.color_palette.text.primary};
+        font: ${({ theme }) => theme.typography.text};
+        color: ${({ theme }) => theme.color_palette.base.secondary};
+        text-align: justify;
     }
 `;
 
-export const BuyButton = styled.button`
+export const Button = styled.button`
     width: 100%;
-    height: 2.25rem;
-    padding: 0.25rem 0;
+    height: max-content;
+    padding: 0.75rem 0;
     display: grid;
     grid: 100% / repeat(2, auto);
     justify-content: center;
     align-items: center;
-    column-gap: 0.75rem;
+    column-gap: ${({ theme }) => theme.shape.spacing.big};
     background-color: ${({ theme }) => theme.color_palette.brand};
     border-radius: 0 0 ${({ theme }) => theme.shape.border.radius.main} ${({ theme }) => theme.shape.border.radius.main};
 
     .icon {
-        font-size: ${({ theme }) => theme.shape.icon.medium};
-        color: ${({ theme }) => theme.color_palette.text.secondary};
+        font-size: ${({ theme }) => theme.shape.icon.main};
+        color: ${({ theme }) => theme.color_palette.base.primary};
     }
 
     span {
-        font-weight: ${({ theme }) => theme.typography.weight.semi_bold};
-        font-size: ${({ theme }) => theme.typography.size.title};
-        font-family: ${({ theme }) => theme.typography.family};
-        color: ${({ theme }) => theme.color_palette.text.secondary};
+        font: ${({ theme }) => theme.typography.button};
+        color: ${({ theme }) => theme.color_palette.base.primary};
     }
 `;

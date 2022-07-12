@@ -3,41 +3,34 @@ export const theme = {
         brand: "#0F52BA",
         base: {
             primary: "#F4F4F4",
-            secondary: "#373737",
-        },
-        text: {
-            primary: "#2C2C2C",
-            secondary: "#F4F4F4",
-        },
-        variant: {
-            primary: "#0e0d0d",
-            secondary: "#EEEEEE",
+            secondary: "#2C2C2C",
         },
     },
     typography: {
-        weight: {
-            light: 300,
-            regular: 400,
-            semi_bold: 600,
-            bold: 700,
+        title: "normal 400 1em / normal Montserrat, Helvetica, sans-serif",
+        subtitle: "normal 700 0.875em / normal Montserrat, Helvetica, sans-serif",
+        text: "normal 300 0.6255em / normal Montserrat, Helvetica, sans-serif",
+        button: "normal 600 1em / normal Montserrat, Helvetica, sans-serif",
+        variant: {
+            navbar: "normal 700 0.875em / normal Montserrat, Helvetica, sans-serif",
+            shoppcart: "normal 700 1.5em / normal Montserrat, Helvetica, sans-serif",
         },
-        size: {
-            title: "1em", // 16px
-            subtitle: "0.875em", // 14px
-            text: "0.6255em", // 10px
-        },
-        family: "Montserrat, Helvetica, sans-serif",
     },
     shape: {
-        screen_break: "62rem", // 992px
+        spacing: {
+            small: "0.25rem", // 4px
+            medium: "0.5rem", // 8px
+            big: "1rem", // 16px
+        },
         border: {
             radius: {
                 main: "0.5rem", // 8px
+                circle: "100%",
             },
         },
         icon: {
-            small: "1.5rem", // 24px
-            medium: "1.75rem", // 28px
+            main: "1rem", // 16px
+            shoppcart: "1.75rem", // 28px
         },
     },
 };
