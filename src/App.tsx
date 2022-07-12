@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 
 import { Navbar } from "./components/Navbar";
+import { StoreItem } from "./components/StoreItem";
 import { getProducts } from "./data/services";
 import Global from "./ui/global";
-import { StoreItem } from "./components/StoreItem";
 import { List, ShoppCart } from "./ui/styles";
 import { theme } from "./ui/theme";
 
@@ -19,11 +19,10 @@ interface IApiResponseProps {
 
 export default function App() {
     const [toggle, setToggle] = useState(false);
-    const [store, setStore] = useState<IApiResponseProps[]>([]);
+    const [data, setData] = useState<IApiResponseProps[]>([]);
 
     useEffect(() => {
-        getProducts().then((data) => setStore(data));
-        getProducts().then((data) => console.log(data));
+        getProducts().then(setData);
     }, []);
 
     return (
@@ -38,7 +37,7 @@ export default function App() {
 
             <main>
                 <List>
-                    {store.map((item) => {
+                    {data.map((item) => {
                         return (
                             <li key={item.id}>
                                 <StoreItem

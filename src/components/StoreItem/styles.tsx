@@ -23,6 +23,7 @@ export const Box = styled.div`
     img {
         width: 7rem;
         height: 8.5rem;
+        margin: auto;
     }
 
     div {
