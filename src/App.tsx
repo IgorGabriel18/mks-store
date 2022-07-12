@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 
 import { Navbar } from "./components/Navbar";
 import { StoreItem } from "./components/StoreItem";
+import { CartItem } from "./components/CartItem";
 import { getProducts } from "./data/services";
 import Global from "./ui/global";
 import { List, ShoppCart } from "./ui/styles";
@@ -59,7 +60,15 @@ export default function App() {
                                 <X className="icon" />
                             </button>
                         </header>
-                        <ul></ul>
+                        <ul>
+                            {data.slice(0, 3).map((item) => {
+                                return (
+                                    <li key={item.id}>
+                                        <CartItem name={item.name} photo={item.photo} price={item.price} />
+                                    </li>
+                                );
+                            })}
+                        </ul>
                         <footer>
                             <div>
                                 <h3>Total:</h3>

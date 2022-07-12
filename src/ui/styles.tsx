@@ -16,7 +16,7 @@ export const ShoppCart = styled.aside`
     top: 0;
     right: 0;
     z-index: 20;
-    width: 18rem;
+    width: 20rem;
     height: 100vh;
     display: grid;
     grid: repeat(3, auto) / 100%;
@@ -43,6 +43,7 @@ export const ShoppCart = styled.aside`
         button {
             width: max-content;
             height: max-content;
+            padding: ${({ theme }) => theme.shape.spacing.small};
             display: grid;
             grid: 100% / 100%;
             place-items: center;
@@ -51,7 +52,7 @@ export const ShoppCart = styled.aside`
 
             .icon {
                 font-size: ${({ theme }) => theme.shape.icon.shoppcart};
-                color: ${({ theme }) => theme.color_palette.brand};
+                color: ${({ theme }) => theme.color_palette.base.primary};
             }
         }
     }
@@ -59,8 +60,12 @@ export const ShoppCart = styled.aside`
     ul {
         width: 100%;
         height: 16rem;
-        padding: 0 1rem;
-        overflow: hidden;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: ${({ theme }) => theme.shape.spacing.big};
+        overflow-y: scroll;
     }
 
     footer {

@@ -10,6 +10,7 @@ export const theme = {
         title: "normal 400 1em / normal Montserrat, Helvetica, sans-serif",
         subtitle: "normal 700 0.875em / normal Montserrat, Helvetica, sans-serif",
         text: "normal 300 0.6255em / normal Montserrat, Helvetica, sans-serif",
+        legend: "normal 300 0.75em / normal Montserrat, Helvetica, sans-serif",
         button: "normal 600 1em / normal Montserrat, Helvetica, sans-serif",
         variant: {
             navbar: "normal 700 0.875em / normal Montserrat, Helvetica, sans-serif",
