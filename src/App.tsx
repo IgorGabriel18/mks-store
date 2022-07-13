@@ -2,12 +2,12 @@ import { ShoppingCart, X } from "phosphor-react";
 import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 
+import { CartItem } from "./components/CartItem";
 import { Navbar } from "./components/Navbar";
 import { StoreItem } from "./components/StoreItem";
-import { CartItem } from "./components/CartItem";
-import { getProducts } from "./data/services";
+import api from "./data/services/api";
 import Global from "./ui/global";
-import { List, ShoppCart } from "./ui/styles";
+import { Menu, List, ShoppCart } from "./ui/styles";
 import { theme } from "./ui/theme";
 
 interface IApiResponseProps {
@@ -21,10 +21,21 @@ interface IApiResponseProps {
 export default function App() {
     const [toggle, setToggle] = useState(false);
     const [data, setData] = useState<IApiResponseProps[]>([]);
+    const [search, setSearch] = useState("");
+    const [nPage, setNPage] = useState("");
 
     useEffect(() => {
-        getProducts().then(setData);
-    }, []);
+        function getProducts() {
+            return api
+                .get(`products?page=${nPage}&rows=5&sortBy=name&orderBy=ASC`)
+                .then((res) => res.data.products)
+                .then(setData);
+        }
+
+        getProducts();
+    }, [nPage]);
+
+    const filteredData = data.filter((data) => data.name.toLocaleLowerCase().includes(search.toLocaleLowerCase()));
 
     return (
         <ThemeProvider theme={theme}>
@@ -32,13 +43,31 @@ export default function App() {
             <Navbar>
                 <button className="btn" type="button" onClick={() => setToggle(true)}>
                     <ShoppingCart className="icon" />
-                    <span>0</span>
+                    <span>3</span>
                 </button>
             </Navbar>
 
             <main>
+                <Menu>
+                    <div>
+                        <input
+                            type="text"
+                            value={nPage}
+                            onChange={(ev) => setNPage(ev.target.value)}
+                            placeholder="N° da página"
+                            className="filter"
+                        />
+                        <input
+                            type="text"
+                            value={search}
+                            onChange={(ev) => setSearch(ev.target.value)}
+                            placeholder="Pesquisar produto..."
+                            className="filter"
+                        />
+                    </div>
+                </Menu>
                 <List>
-                    {data.map((item) => {
+                    {filteredData.map((item) => {
                         return (
                             <li key={item.id}>
                                 <StoreItem
@@ -61,7 +90,7 @@ export default function App() {
                             </button>
                         </header>
                         <ul>
-                            {data.slice(0, 3).map((item) => {
+                            {filteredData.slice(0, 3).map((item) => {
                                 return (
                                     <li key={item.id}>
                                         <CartItem name={item.name} photo={item.photo} price={item.price} />

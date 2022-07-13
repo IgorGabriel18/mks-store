@@ -1,10 +1,39 @@
 import styled from "styled-components";
 
+export const Menu = styled.div`
+    width: 100%;
+    height: auto;
+    padding: ${({ theme }) => theme.shape.spacing.big} ${({ theme }) => theme.shape.spacing.big};
+    display: grid;
+    grid: repeat(2, auto) / 100%;
+    justify-items: center;
+    row-gap: ${({ theme }) => theme.shape.spacing.medium};
+
+    div {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid: repeat(2, auto) / 100%;
+        justify-items: center;
+        row-gap: ${({ theme }) => theme.shape.spacing.medium};
+
+        .filter {
+            width: min(100%, 16rem);
+            height: max-content;
+            padding: ${({ theme }) => theme.shape.spacing.medium} ${({ theme }) => theme.shape.spacing.big};
+            border-radius: ${({ theme }) => theme.shape.border.radius.main};
+            outline: none;
+            font: ${({ theme }) => theme.typography.subtitle};
+            color: ${({ theme }) => theme.color_palette.base.secondary};
+        }
+    }
+`;
+
 export const List = styled.ul`
     width: min(100%, 75rem);
     height: auto;
     margin: 0 auto;
-    padding: ${({ theme }) => theme.shape.spacing.big} 0;
+    padding: ${({ theme }) => theme.shape.spacing.big} ${({ theme }) => theme.shape.spacing.big};
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
